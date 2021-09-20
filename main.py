@@ -200,7 +200,7 @@ class Ui_MainWindow(object):
   
 	def savePhoto(self):
 		""" This function will save the image """
-		_image,Part,Zone = ocrLenso.main(self.image)
+		_image,Part,Zone = ocr.main(self.image)
 		self.filename = Part+'_'+Zone+'_'+str(time.strftime("%Y-%b-%d_%H_%M_%S"))+'.jpg'
 		cv2.imwrite(os.path.join(saveDir, self.filename),_image,[int(cv2.IMWRITE_JPEG_QUALITY), 100])
 		print('Image saved as:',self.filename)
